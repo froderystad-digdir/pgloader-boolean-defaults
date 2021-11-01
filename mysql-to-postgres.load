@@ -1,0 +1,8 @@
+LOAD DATABASE
+    FROM mysql://root:admin@mysql:3306/demodb?sslmode=disable
+    INTO postgresql://demo:demo@postgres:5432/
+    WITH on error stop,
+         batch size = 10 MB
+
+ALTER SCHEMA 'demodb' RENAME TO 'public'
+;

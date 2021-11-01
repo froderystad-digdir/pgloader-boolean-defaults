@@ -1,0 +1,35 @@
+version: "2.0"
+
+services:
+  mysql:
+    image: mysql:5.7.22
+    restart: always
+    ports:
+      - "127.0.0.1:3308:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_DATABASE=test
+    volumes:
+      - mysql:/var/lib/mysql
+    networks:
+      - platform
+
+  postgres:
+    image: postgres:13.4
+    restart: always
+    ports:
+      - "127.0.0.1:5438:5432"
+    environment:
+      - POSTGRES_USER=demo
+      - POSTGRES_PASSWORD=demo
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    networks:
+      - platform
+
+volumes:
+  mysql:
+  postgres:
+
+networks:
+  platform:
