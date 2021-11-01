@@ -2,6 +2,11 @@
 
 This project is created to reproduce a problem where pgloader doesn't migrate default values for boolean columns, when migrating from MySQL to Postgres.
 
+Note that this project uses MySQL 5.7, which is what I need to migrate from.
+I tried running MySQL 8.0, to see if the problem persisted there,
+but hit the well-known [QMYND:MYSQL-UNSUPPORTED-AUTHENTICATION](https://github.com/dimitri/pgloader/issues/782) problem,
+and bailed since 8.0 wasn't a strict requirement on my side.
+
 ## Start MySQL and PostgreSQL
 
 Start the infrastructure:
