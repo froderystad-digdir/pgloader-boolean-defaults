@@ -37,8 +37,8 @@ mysql> describe demo_table;
 
 ## Migrate Using Pgloader
 
-Start a pgloader container: `docker run --rm --name pgloader --network=pgloader-playground_platform -it dimitri/pgloader:ccl.latest /bin/bash`
-(change the network name if your base folder is different from `pgloader-playground`)
+Start a pgloader container: `docker run --rm --name pgloader --network=pgloader-boolean-defaults_platform -it dimitri/pgloader:ccl.latest /bin/bash`
+(change the network name if your base folder is different from `pgloader-boolean-defaults`)
 
 The image has no editor installed, so install one that you prefer:
 ```shell
